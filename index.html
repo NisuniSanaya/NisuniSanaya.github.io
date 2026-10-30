@@ -1,0 +1,749 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Nisuni Sanaya | Business Analytics Portfolio</title>
+
+    <meta name="description" content="The professional portfolio of Nisuni Sanaya, a Business Analytics undergraduate interested in data analytics, business intelligence and financial insights.">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --black: #100E10;
+            --dark: #191317;
+            --burgundy: #32101F;
+            --wine: #762D4A;
+            --pink: #C15C83;
+            --light-pink: #E5B8C9;
+            --text: #F4EDF0;
+            --muted: #B8AAB1;
+            --border: rgba(193, 92, 131, 0.22);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background: var(--black);
+            color: var(--text);
+            font-family: 'DM Sans', sans-serif;
+            line-height: 1.7;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .container {
+            width: 84%;
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        /* NAVIGATION */
+
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: rgba(16, 14, 16, 0.94);
+            backdrop-filter: blur(15px);
+            border-bottom: 1px solid var(--border);
+        }
+
+        nav {
+            min-height: 78px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 30px;
+            color: var(--light-pink);
+            font-weight: 700;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            font-size: 13px;
+            color: var(--muted);
+            transition: 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--pink);
+        }
+
+        /* HERO */
+
+        .hero {
+            min-height: 88vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+            background:
+                radial-gradient(circle at 85% 40%, rgba(118,45,74,0.25), transparent 35%),
+                linear-gradient(120deg, #100E10 40%, #32101F 100%);
+        }
+
+        .hero-content {
+            padding: 110px 0;
+            max-width: 850px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .eyebrow {
+            color: var(--pink);
+            letter-spacing: 4px;
+            font-size: 12px;
+            font-weight: 700;
+            margin-bottom: 25px;
+        }
+
+        h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(45px, 7vw, 82px);
+            line-height: 1.13;
+            margin-bottom: 25px;
+        }
+
+        h1 span {
+            color: var(--light-pink);
+        }
+
+        .hero-description {
+            max-width: 650px;
+            color: var(--muted);
+            font-size: 16px;
+            margin-bottom: 35px;
+        }
+
+        .buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 13px 25px;
+            border-radius: 4px;
+            font-size: 13px;
+            font-weight: 600;
+            transition: 0.3s;
+        }
+
+        .btn-primary {
+            background: var(--wine);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: var(--pink);
+            transform: translateY(-3px);
+        }
+
+        .btn-outline {
+            border: 1px solid var(--pink);
+            color: var(--light-pink);
+        }
+
+        .btn-outline:hover {
+            background: var(--burgundy);
+        }
+
+        /* GENERAL SECTIONS */
+
+        section {
+            padding: 100px 0;
+        }
+
+        .section-label {
+            color: var(--pink);
+            letter-spacing: 3px;
+            font-size: 11px;
+            font-weight: 700;
+            margin-bottom: 12px;
+        }
+
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(32px, 5vw, 45px);
+            margin-bottom: 20px;
+        }
+
+        .section-description {
+            color: var(--muted);
+            max-width: 700px;
+            margin-bottom: 40px;
+        }
+
+        /* ABOUT */
+
+        .about {
+            background: var(--dark);
+        }
+
+        .about-text {
+            max-width: 850px;
+            color: var(--muted);
+            font-size: 16px;
+        }
+
+        .about-text strong {
+            color: var(--light-pink);
+        }
+
+        /* EXPERTISE */
+
+        .expertise-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .expertise-card {
+            background: #1B1519;
+            border: 1px solid var(--border);
+            padding: 30px;
+            border-radius: 8px;
+            transition: 0.3s;
+        }
+
+        .expertise-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--pink);
+        }
+
+        .expertise-card .number {
+            color: var(--pink);
+            font-size: 13px;
+            margin-bottom: 20px;
+        }
+
+        .expertise-card h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 21px;
+            margin-bottom: 12px;
+        }
+
+        .expertise-card p {
+            color: var(--muted);
+            font-size: 13px;
+        }
+
+        /* SKILLS */
+
+        .skills {
+            background: var(--burgundy);
+        }
+
+        .skill-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 13px;
+        }
+
+        .skill {
+            border: 1px solid rgba(229,184,201,0.3);
+            color: var(--light-pink);
+            padding: 11px 20px;
+            border-radius: 30px;
+            font-size: 13px;
+        }
+
+        /* PROJECTS */
+
+        .project-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 22px;
+        }
+
+        .project-card {
+            background: var(--dark);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 30px;
+            transition: 0.3s;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--pink);
+        }
+
+        .project-category {
+            color: var(--pink);
+            font-size: 11px;
+            letter-spacing: 2px;
+            margin-bottom: 15px;
+        }
+
+        .project-card h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 23px;
+            margin-bottom: 12px;
+        }
+
+        .project-card p {
+            color: var(--muted);
+            font-size: 14px;
+            margin-bottom: 20px;
+        }
+
+        .project-link {
+            color: var(--light-pink);
+            font-size: 13px;
+            font-weight: 600;
+        }
+
+        /* EXPERIENCE */
+
+        .experience {
+            background: var(--dark);
+        }
+
+        .experience-item {
+            border-left: 2px solid var(--wine);
+            padding: 5px 0 25px 25px;
+            margin-top: 25px;
+        }
+
+        .experience-item h3 {
+            font-size: 19px;
+            margin-bottom: 5px;
+        }
+
+        .experience-item p {
+            color: var(--muted);
+            font-size: 14px;
+        }
+
+        /* CONTACT */
+
+        .contact {
+            text-align: center;
+            background: linear-gradient(135deg, #32101F, #100E10);
+        }
+
+        .contact .section-description {
+            margin: 0 auto 30px;
+        }
+
+        /* FOOTER */
+
+        footer {
+            background: var(--black);
+            border-top: 1px solid var(--border);
+            padding: 25px 0;
+            text-align: center;
+            color: var(--muted);
+            font-size: 12px;
+        }
+
+        /* MOBILE */
+
+        @media (max-width: 800px) {
+            .container {
+                width: 90%;
+            }
+
+            .nav-links {
+                gap: 12px;
+            }
+
+            .nav-links a {
+                font-size: 11px;
+            }
+
+            .expertise-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 560px) {
+            nav {
+                flex-direction: column;
+                padding: 15px 0;
+                gap: 12px;
+            }
+
+            .nav-links {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .hero {
+                min-height: 75vh;
+            }
+
+            .hero-content {
+                padding: 75px 0;
+            }
+
+            .expertise-grid,
+            .project-grid {
+                grid-template-columns: 1fr;
+            }
+
+            section {
+                padding: 70px 0;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- NAVIGATION -->
+
+    <header>
+        <nav class="container">
+            <a href="#home" class="logo">NS.</a>
+
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#expertise">Expertise</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+
+    <!-- HERO SECTION -->
+
+    <section class="hero" id="home">
+        <div class="container">
+            <div class="hero-content">
+
+                <p class="eyebrow">BUSINESS ANALYTICS • DATA • FINANCE</p>
+
+                <h1>
+                    Turning Data Into
+                    <span>Meaningful Decisions.</span>
+                </h1>
+
+                <p class="hero-description">
+                    Hello, I'm Nisuni Sanaya — a Business Analytics
+                    undergraduate passionate about data-driven
+                    decision-making, business intelligence and
+                    financial insights.
+                </p>
+
+                <div class="buttons">
+                    <a href="#projects" class="btn btn-primary">
+                        Explore My Work →
+                    </a>
+
+                    <a href="#contact" class="btn btn-outline">
+                        Let's Connect
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ABOUT SECTION -->
+
+    <section class="about" id="about">
+        <div class="container">
+
+            <p class="section-label">01 / ABOUT ME</p>
+
+            <h2 class="section-title">Beyond the Numbers.</h2>
+
+            <p class="about-text">
+                I am an undergraduate at <strong>NSBM Green University</strong>,
+                pursuing a degree in Business Analytics.
+
+                My interests lie in exploring how data, technology and
+                business knowledge can support smarter decisions and
+                improve organisational performance.
+
+                I am particularly interested in business intelligence,
+                financial analysis and project management, while
+                continuously developing my analytical and technical skills.
+            </p>
+
+        </div>
+    </section>
+
+
+    <!-- EXPERTISE SECTION -->
+
+    <section id="expertise">
+        <div class="container">
+
+            <p class="section-label">02 / AREAS OF INTEREST</p>
+
+            <h2 class="section-title">What I Focus On.</h2>
+
+            <p class="section-description">
+                Connecting analytical thinking with practical
+                business applications.
+            </p>
+
+            <div class="expertise-grid">
+
+                <div class="expertise-card">
+                    <p class="number">01</p>
+                    <h3>Data Analytics</h3>
+                    <p>Exploring datasets, identifying patterns
+                    and transforming information into insights.</p>
+                </div>
+
+                <div class="expertise-card">
+                    <p class="number">02</p>
+                    <h3>Business Intelligence</h3>
+                    <p>Developing interactive dashboards and
+                    supporting data-driven business decisions.</p>
+                </div>
+
+                <div class="expertise-card">
+                    <p class="number">03</p>
+                    <h3>Financial Analysis</h3>
+                    <p>Exploring financial information, business
+                    performance and analytical decision-making.</p>
+                </div>
+
+                <div class="expertise-card">
+                    <p class="number">04</p>
+                    <h3>Project Management</h3>
+                    <p>Interested in project planning, coordination,
+                    organisation and execution.</p>
+                </div>
+
+                <div class="expertise-card">
+                    <p class="number">05</p>
+                    <h3>Data Visualisation</h3>
+                    <p>Presenting complex information through
+                    clear and meaningful visual stories.</p>
+                </div>
+
+                <div class="expertise-card">
+                    <p class="number">06</p>
+                    <h3>Business Decision-Making</h3>
+                    <p>Connecting analytical findings with
+                    real-world organisational challenges.</p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+    <!-- SKILLS SECTION -->
+
+    <section class="skills" id="skills">
+        <div class="container">
+
+            <p class="section-label">03 / TECHNICAL TOOLKIT</p>
+
+            <h2 class="section-title">Tools & Technologies.</h2>
+
+            <p class="section-description">
+                Technologies and tools I work with and continue to develop.
+            </p>
+
+            <div class="skill-list">
+                <span class="skill">Python</span>
+                <span class="skill">SQL</span>
+                <span class="skill">Power BI</span>
+                <span class="skill">Microsoft Excel</span>
+                <span class="skill">Tableau</span>
+                <span class="skill">R</span>
+                <span class="skill">Pandas</span>
+                <span class="skill">NumPy</span>
+                <span class="skill">Data Visualisation</span>
+                <span class="skill">Data Analysis</span>
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- PROJECTS SECTION -->
+
+    <section id="projects">
+        <div class="container">
+
+            <p class="section-label">04 / SELECTED WORK</p>
+
+            <h2 class="section-title">Projects & Explorations.</h2>
+
+            <p class="section-description">
+                A collection of academic projects, analytical
+                explorations and practical applications.
+            </p>
+
+            <div class="project-grid">
+
+                <div class="project-card">
+                    <p class="project-category">POWER BI</p>
+                    <h3>COVID-19 Data Analysis</h3>
+                    <p>
+                        An academic dashboard project exploring
+                        COVID-19 data through interactive visualisation.
+                    </p>
+                    <a href="#" class="project-link">Project link coming soon →</a>
+                </div>
+
+                <div class="project-card">
+                    <p class="project-category">TABLEAU</p>
+                    <h3>Global Renewable Energy Transition</h3>
+                    <p>
+                        Exploring renewable energy production,
+                        capacity, investment and global trends.
+                    </p>
+                    <a href="#" class="project-link">Project link coming soon →</a>
+                </div>
+
+                <div class="project-card">
+                    <p class="project-category">PYTHON</p>
+                    <h3>Retail Outlet Performance Analysis</h3>
+                    <p>
+                        Exploring retail outlet data through
+                        data cleaning, preprocessing and analysis.
+                    </p>
+                    <a href="#" class="project-link">Project link coming soon →</a>
+                </div>
+
+                <div class="project-card">
+                    <p class="project-category">SQL</p>
+                    <h3>Database & Query Analysis</h3>
+                    <p>
+                        Academic database exercises involving
+                        relational data and SQL queries.
+                    </p>
+                    <a href="#" class="project-link">Project link coming soon →</a>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+    <!-- EXPERIENCE SECTION -->
+
+    <section class="experience" id="experience">
+        <div class="container">
+
+            <p class="section-label">05 / LEADERSHIP & DEVELOPMENT</p>
+
+            <h2 class="section-title">Beyond Academics.</h2>
+
+            <div class="experience-item">
+                <h3>Assistant Project Manager</h3>
+                <p>Student Business Analytics Circle (SBAC)</p>
+                <p>Student project coordination, planning and teamwork.</p>
+            </div>
+
+            <div class="experience-item">
+                <h3>Editorial & Content Contributions</h3>
+                <p>Analytics Edge</p>
+                <p>Contributing to analytical content and publication activities.</p>
+            </div>
+
+            <div class="experience-item">
+                <h3>University Event Coordination</h3>
+                <p>Business Analytics Circle</p>
+                <p>Supporting university events, coordination and guest engagement.</p>
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- CERTIFICATIONS SECTION -->
+
+    <section id="certifications">
+        <div class="container">
+
+            <p class="section-label">06 / CONTINUOUS LEARNING</p>
+
+            <h2 class="section-title">Certifications & Learning.</h2>
+
+            <div class="project-card">
+                <p class="project-category">GOOGLE • COURSERA</p>
+                <h3>Google Project Management Professional Certificate</h3>
+                <p>
+                    Professional learning in project management,
+                    planning, execution, Agile methodologies and
+                    project coordination.
+                </p>
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- CONTACT SECTION -->
+
+    <section class="contact" id="contact">
+        <div class="container">
+
+            <p class="section-label">07 / GET IN TOUCH</p>
+
+            <h2 class="section-title">Let's Connect.</h2>
+
+            <p class="section-description">
+                Open to learning opportunities, professional
+                connections and meaningful collaborations.
+            </p>
+
+            <div class="buttons" style="justify-content:center;">
+
+                <a href="https://www.linkedin.com/" 
+                   target="_blank" class="btn btn-primary">
+                    LinkedIn →
+                </a>
+
+                <a href="https://github.com/NisuniSanaya"
+                   target="_blank" class="btn btn-outline">
+                    GitHub →
+                </a>
+
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- FOOTER -->
+
+    <footer>
+        <div class="container">
+            © 2026 Nisuni Sanaya. All rights reserved.
+            <br>
+            Business Analytics • Data • Finance
+        </div>
+    </footer>
+
+</body>
+</html>
